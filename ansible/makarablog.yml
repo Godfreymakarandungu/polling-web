@@ -74,7 +74,7 @@
             become: yes
           - name: copy the nginx config file and restart nginx
             copy:
-              src: /home/godfrey/Documents/work/makara
+              src: /home/godfrey/Documents/documents/python/work/codes-python/continousintergration/polling-web/makara
               dest: /etc/nginx/sites-available
             become: yes
           - name: create symlink
@@ -127,7 +127,7 @@
           #   ignore_errors: yes 
   
           - name: Obtain SSL certificate
-            shell: certbot --nginx --noninteractive --agree-tos --email godfreymakara2017@yahoo.com -d makarapolls.duckdns.org  -d www.makarapolls.duckdns.org 
+            shell: certbot certonly --nginx --noninteractive --agree-tos --email godfreymakara2017@yahoo.com -d makarapolls.duckdns.org  -d www.makarapolls.duckdns.org 
             become: yes
             ignore_errors: yes 
 

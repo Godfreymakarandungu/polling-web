@@ -72,6 +72,11 @@ jobs:
              pip3 install --upgrade pip
             pip3 install twine
             twine upload dist/*  --skip-existing 
+      - run:
+          name: executing ansible to a remote server
+          command: |
+             . venv/bin/activate
+             ansible-playbook ansible/makarablog.yml -i hosts ansible/hosts --become
       # - run:
       #     name: executing ansible to a remote server
       #     command: |
