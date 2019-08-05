@@ -39,15 +39,15 @@ jobs:
       #       sudo apt-get install postgresql postgresql-contrib
       #       pwd
       #       psql -h localhost -U ubuntu -d makarablog -a -f schema.sql
-      # - run:
-      #     name: Running coverage
-      #     command: |
-      #       # coverage run blog/test*.py && coverage report
-      #       . venv/bin/activate
-      #       pip install coverage
-      #       pip install django-coverage
-      #       coverage run --source='.' manage.py test #--cov-fail-under=100
-      #       coverage report
+      - run:
+          name: Running coverage
+          command: |
+            # coverage run blog/test*.py && coverage report
+            . venv/bin/activate
+            pip install coverage
+            pip install django-coverage
+            coverage run --source='.' manage.py test --cov-fail-under=100
+            coverage report
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test-results
       - store_artifacts: # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
