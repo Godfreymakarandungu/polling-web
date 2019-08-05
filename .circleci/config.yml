@@ -46,7 +46,7 @@ jobs:
             . venv/bin/activate
             pip install coverage
             pip install django-coverage
-            coverage run --source='.' manage.py test --cov-fail-under=100
+            coverage run --source='.' manage.py test #--cov-fail-under=100
             coverage report
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test-results
